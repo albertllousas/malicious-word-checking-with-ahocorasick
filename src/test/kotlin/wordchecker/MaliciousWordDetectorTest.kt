@@ -9,28 +9,28 @@ class MaliciousWordDetectorTest {
 
     @Test
     fun `should detect a single malicious word`() {
-        val result = maliciousWordDetector.fetchMaliciousWord("I want to get high with lsd")
+        val result = maliciousWordDetector.fetchMaliciousWords("I want to get high with lsd")
 
         result shouldBe listOf("lsd")
     }
 
     @Test
     fun `should detect multiple malicious words`() {
-        val result = maliciousWordDetector.fetchMaliciousWord("I want to get high with lsd and cocaine")
+        val result = maliciousWordDetector.fetchMaliciousWords("I want to get high with lsd and cocaine")
 
         result shouldBe listOf("lsd", "cocaine")
     }
 
     @Test
     fun `should detect no malicious words`() {
-        val result = maliciousWordDetector.fetchMaliciousWord("I want to get high with love")
+        val result = maliciousWordDetector.fetchMaliciousWords("I want to get high with love")
 
         result shouldBe emptyList()
     }
 
     @Test
     fun `should detect malicious words with partial matches`() {
-        val result = maliciousWordDetector.fetchMaliciousWord("I want to get high with cocaineeeeee")
+        val result = maliciousWordDetector.fetchMaliciousWords("I want to get high with cocaineeeeee")
 
         result shouldBe listOf("cocaine")
     }

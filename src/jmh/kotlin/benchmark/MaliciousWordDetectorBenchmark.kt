@@ -32,6 +32,6 @@ open class MaliciousWordDetectorBenchmark {
 
     @Benchmark
     fun benchmarkDetection(): List<String> {
-        return detector.fetchMaliciousWord(text)
+        return detector.fetchMaliciousWords(text)
     }
 }

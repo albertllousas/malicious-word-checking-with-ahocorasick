@@ -14,6 +14,6 @@ class MaliciousWordDetector(private val maliciousWordsFile: String) {
         .addKeywords(keywords)
         .build()
 
-    fun fetchMaliciousWord(text: String) = trie.parseText(text).map { it.keyword }
+    fun fetchMaliciousWords(text: String) = trie.parseText(text).map { it.keyword }
 
 }
