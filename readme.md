@@ -28,5 +28,7 @@ Benchmark                                          Mode  Cnt  Score    Error  Un
 MaliciousWordDetectorBenchmark.benchmarkDetection  avgt   25  0.001 ±  0.001  ms/op
 MaliciousWordDetectorBenchmark.benchmarkLoad       avgt   25  0.439 ±  0.019  ms/op
 ```
-Summary, the load time (loading 1000 from a file to the class) is around half a second, but it takes on average 1 microsecond per detection 🚀
+Summary:
+- load time: around half a second (loading 1000 from a file to the class) 
+- detection time: 1 microsecond per detection 🚀
 
