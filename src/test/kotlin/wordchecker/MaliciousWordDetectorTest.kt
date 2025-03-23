@@ -15,6 +15,13 @@ class MaliciousWordDetectorTest {
     }
 
     @Test
+    fun `should detect a malicious word with case-insensitive matching`() {
+        val result = maliciousWordDetector.fetchMaliciousWords("I want to get high with LsD")
+
+        result shouldBe listOf("lsd")
+    }
+
+    @Test
     fun `should detect multiple malicious words`() {
         val result = maliciousWordDetector.fetchMaliciousWords("I want to get high with lsd and cocaine")
 
